@@ -1,0 +1,40 @@
+.newsImage {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  float: left;
+
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.cardContent {
+}
+.cardText {
+}
+h3 {
+  margin: 0px;
+}
+.newsCard:hover {
+  background-color: #f0f0f033;
+  cursor: pointer;
+  box-shadow: 0px -10px 45px -5px rgba(155, 155, 155, 0.288);
+}
+.newsCard {
+  margin: 10px;
+  padding: 0px;
+  flex-basis: 400px;
+  display: block;
+  box-shadow: 0 -10px 49px -15px rgba(187, 191, 193, 0.589);
+}
+
+.newsfeed-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+.upper-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
