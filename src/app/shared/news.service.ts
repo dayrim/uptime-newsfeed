@@ -13,7 +13,7 @@ export class NewsService {
   constructor(private http: HttpClient) {}
 
   getAllNews(): Observable<Newsmodel> {
-    return this.http.get<Newsmodel>(this.url + "/api/news");
+    return this.http.get<Newsmodel>("/api/news");
   }
 
   private handleError(error: any) {
@@ -27,16 +27,8 @@ export class NewsService {
   }
 }
 
-//Real api call. Returns No 'Access-Control-Allow-Origin' header is present on the requested resource.
-
 /*
-  getProducts(): Observable<IProduct[]> {
-    let options = {
-      headers: new HttpHeaders({
-        AUTH: 'fae7b9f6-6363-45a1-a9c9-3def2dae206d',
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
-    return this.http.get<IProduct[]>(this.apiUrl + '/list', options);
+  getAllNews(): Observable<Newsmodel> {
+    return this.http.get<Newsmodel>(this.url + "/api/news");
   }
   */
