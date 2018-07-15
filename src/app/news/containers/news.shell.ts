@@ -6,7 +6,7 @@ import * as NewsfeedAction from "../state/newsfeed.actions";
 import * as NewsfeedSelector from "../state/news.reducer";
 import { Newsfeed, Newsitem } from "../models/newsfeed";
 import { Pagecontent } from "../models/pagecontent";
-import { MatDialog, MatDialogConfig } from "@angular/material";
+import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material";
 import { NewsPopup } from "../components/news-popup.component";
 
 @Component({
