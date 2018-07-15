@@ -17,6 +17,8 @@ export class NewsShellComponent implements OnInit {
   newsItems$: Observable<Newsitem[]>;
   pageContent$: Observable<Pagecontent>;
 
+  dialogRef: MatDialogRef<NewsPopup>;
+
   constructor(private store: Store<NewslistState>, public dialog: MatDialog) {}
   ngOnInit() {
     console.log("Init news shell");
@@ -32,7 +34,13 @@ export class NewsShellComponent implements OnInit {
         dialogConfig.data = pageContent;
         console.log(pageContent);
         if (pageContent.total_pages != 0) {
-          this.dialog.open(NewsPopup, dialogConfig);
+          console.log(this.dialogRef);
+          if (
+            this.dialogRef == null ||
+            this.dialogRef.componentInstance == null
+          ) {
+            this.dialogRef = this.dialog.open(NewsPopup, dialogConfig);
+          }
         }
         // this.dialog.open(NewsPopup, dialogConfig);
       });

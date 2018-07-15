@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { MAT_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { Pagecontent } from "../models/pagecontent";
 
 @Component({
@@ -8,8 +8,14 @@ import { Pagecontent } from "../models/pagecontent";
 })
 export class NewsPopup implements OnInit {
   pageContent: Pagecontent;
-  constructor(@Inject(MAT_DIALOG_DATA) data) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) data,
+    private dialogRef: MatDialogRef<NewsPopup>
+  ) {
     this.pageContent = data;
+  }
+  close() {
+    this.dialogRef.close();
   }
 
   ngOnInit() {}
