@@ -1,24 +1,21 @@
-export interface Newsmodel {
-  items: Newsentry[];
+export interface Newsfeed {
+  items: Newsitem[];
   title: string;
   description?: string;
   url: string;
   image?: string;
 }
-export interface Newsentry {
+export interface Newsitem {
   title: string;
   description: string;
   link: string;
   url: string;
   created: number;
-  media?: Media;
-  info: Newsinfo[];
+  media?: {
+    content: Newsmedia[];
+  };
 }
-
-export interface Media {
-  content: Newsinfo[];
-}
-export interface Newsinfo {
+export interface Newsmedia {
   url: string[];
   medium: string[];
   type: string[];

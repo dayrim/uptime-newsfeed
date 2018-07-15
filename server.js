@@ -35,7 +35,26 @@ app.route("/api/news/").get((req, res) => {
     rss
   ) {
     res.send(rss);
-    console.log(rss);
+    //console.log(rss);
+  });
+});
+
+app.route("/api/pagecontent/*").get((req, res) => {
+  console.log("Called");
+  console.log(req.params[0]);
+  // res.send('req.params');
+  // res.send(req.params);
+
+  var options = {
+    url: "https://mercury.postlight.com/parser?url=" + String(req.params[0]),
+    headers: {
+      "x-api-key": "hK5cePoAM8AOBaKxdybQHC06rAwJAnXoRQCCBH1u"
+    }
+  };
+  console.log(options.url);
+  request(options, function(error, response, body) {
+    console.log(body);
+    res.send(body);
   });
 });
 

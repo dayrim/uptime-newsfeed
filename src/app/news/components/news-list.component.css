@@ -18,7 +18,7 @@ h3 {
 .newsCard:hover {
   background-color: #f0f0f033;
   cursor: pointer;
-  box-shadow: 0px -10px 45px -5px rgba(155, 155, 155, 0.288);
+  box-shadow: 0px -10px 45px -10px rgba(141, 141, 141, 0.404);
 }
 .newsCard {
   margin: 10px;

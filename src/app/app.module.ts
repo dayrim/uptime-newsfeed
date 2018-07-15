@@ -1,23 +1,29 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { MaterialModule } from "./shared/material.module";
+import { MaterialModule } from "./material/material.module";
 import { NewsfeedAppComponent } from "./newsfeed-app";
-import { NewsListComponent } from "./news/news-list.component";
+import { NewsListComponent } from "./news/components/news-list.component";
 import { RouterModule } from "@angular/router";
-import { appRoutes } from "./routes";
-import { NewslistResolver } from "./news/news-list.resolver";
-
+import { appRoutes } from "./app.routes";
+import { StoreModule } from "@ngrx/store";
 import { HttpClientModule } from "@angular/common/http";
-import { HtmlToText } from "./shared/htmlToText.pipe";
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { EffectsModule } from "@ngrx/effects";
+
 @NgModule({
-  declarations: [NewsfeedAppComponent, NewsListComponent, HtmlToText],
+  declarations: [NewsfeedAppComponent],
   imports: [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    MaterialModule
+    MaterialModule,
+
+    BrowserAnimationsModule,
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot({})
   ],
-  providers: [NewslistResolver],
+  providers: [],
   bootstrap: [NewsfeedAppComponent]
 })
 export class AppModule {}
