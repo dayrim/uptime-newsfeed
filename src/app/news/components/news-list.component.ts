@@ -28,15 +28,12 @@ export class NewsListComponent implements OnInit {
   @ViewChild("newsCard") newsCard: ElementRef;
   constructor(private renderer: Renderer) {}
 
-  linkSelectedItem(link: String): void {
+  linkSelectedItem(link: string): void {
     this.itemSelected.emit(link);
   }
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   ngAfterViewInit() {
     this.changeNewswrapperWidth();
-
   }
   onResize() {
     this.changeNewswrapperWidth();

@@ -1,30 +1,20 @@
 <div #upperContainer class="upper-wrapper">
-  <div #container (window:resize)="onResize($event)" class=" newsfeed-wrapper ">
+  <div #container (window:resize)="onResize()" class=" newsfeed-wrapper ">
     <div class="newsCard " *ngFor="let item of newsItems ">
       <div (click)="linkSelectedItem(item.url)" class=" newsCard-wrapper ">
         <div class="cardContent ">
           <div *ngIf="item.media ">
             <div *ngFor="let content of item.media.content ">
-
               <img class="newsImage " [src]="content.url " [alt]="content.url ">
-
-
             </div>
           </div>
           <div *ngIf="!item.media ">
-            <img class="newsImage " [src]=" 'https://dummyimage.com/250/ffffff/000000/800x800&text='+item.title
-        " [alt]="item.title ">
+            <img class="newsImage " [alt]="item.title ">
           </div>
           <div class="cardText ">
-
             <h3>{{item.title}}</h3>
-
-
-
-            <p>
-              {{item.description | removeTags}}</p>
+            <p> {{item.description | removeTags}}</p>
           </div>
-
         </div>
       </div>
     </div>
