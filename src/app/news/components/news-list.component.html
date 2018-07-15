@@ -9,7 +9,8 @@
             </div>
           </div>
           <div *ngIf="!item.media ">
-            <img class="newsImage " [alt]="item.title ">
+            <img class="newsImage " [src]=" 'https://dummyimage.com/250/ffffff/000000/800x800&text='+item.title
+            " [alt]="item.title ">
           </div>
           <div class="cardText ">
             <h3>{{item.title}}</h3>
