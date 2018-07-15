@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType } from "@ngrx/effects";
 import { NewsService } from "../services/news.service";
-import * as NewsfeedAction from "../actions/newsfeed.actions";
+import * as NewsfeedAction from "../state/newsfeed.actions";
 import { mergeMap, map } from "rxjs/operators";
 import { Newsfeed } from "../models/newsfeed";
 import { Observable } from "rxjs";

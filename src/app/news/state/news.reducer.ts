@@ -1,4 +1,4 @@
-import * as NewsfeedAction from "./../actions/newsfeed.actions";
+import * as NewsfeedAction from "../state/newsfeed.actions";
 import { Newsfeed } from "../models/newsfeed";
 import { NewslistState } from "../models/news-list-state";
 import { createFeatureSelector, createSelector } from "@ngrx/store";

@@ -4,10 +4,10 @@ import { NewsListComponent } from "../news/components/news-list.component";
 import { RouterModule, Routes } from "@angular/router";
 import { MaterialModule } from "../material/material.module";
 import { StoreModule } from "@ngrx/store";
-import { reducer } from "./reducers/news.reducer";
+import { reducer } from "./state/news.reducer";
 import { NewsShellComponent } from "./containers/news.shell";
 import { EffectsModule } from "@ngrx/effects";
-import { NewsfeedEffects } from "./effects/news.effects";
+import { NewsfeedEffects } from "./state/news.effects";
 import { RemoveTags } from "../shared/pipes/removeTags.pipe";
 import { NewsPopup } from "./components/news-popup.component";
 
