@@ -4,7 +4,7 @@ import { Pagecontent } from "../models/pagecontent";
 
 @Component({
   selector: "news-popup",
-  templateUrl: "news-popup.component.html"
+  templateUrl: "news-popup.component.html",styleUrls: ["./news-popup.component.scss"]
 })
 export class NewsPopup implements OnInit {
   pageContent: Pagecontent;

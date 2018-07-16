@@ -3,7 +3,7 @@
 <mat-dialog-content>
     <h4 *ngIf="pageContent.author">{{pageContent.author}}</h4>
     <h4 *ngIf="pageContent.date_published">{{pageContent.date_published | date}}</h4>
-    <div [innerHTML]="pageContent.content"></div>
+    <div #InnerContent [innerHTML]="pageContent.content"></div>
     <h6>{{pageContent.domain}}</h6>
 </mat-dialog-content>
 <mat-dialog-actions>

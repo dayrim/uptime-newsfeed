@@ -1,6 +1,6 @@
 <div #upperContainer class="upper-wrapper">
   <div #container (window:resize)="onResize()" class=" newsfeed-wrapper ">
-    <div class="newsCard " *ngFor="let item of newsItems ">
+    <div #cardWrapper class="newsCard " *ngFor="let item of newsItems ">
       <div (click)="linkSelectedItem(item.url)" class=" newsCard-wrapper ">
         <div class="cardContent ">
           <div *ngIf="item.media ">
