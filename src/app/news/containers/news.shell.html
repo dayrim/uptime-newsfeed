@@ -1,1 +1,4 @@
-<news-list [newsItems]="newsItems$ | async" (itemSelected)="linkSelectedItem($event)"></news-list>
+<news-list [newsgridColumnWidth]="columnWidth$ | async" [newsItems]="newsItems$ | async" (itemSelected)="linkSelectedItem($event)"
+    (columnCountChanged)="updateNewsgridColumnCount($event)" (widthChanged)="updateNewsgridWidth($event)"></news-list>
+
+    
