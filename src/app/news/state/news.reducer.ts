@@ -1,5 +1,4 @@
 import * as NewsfeedAction from "../state/newsfeed.actions";
-import { Newsfeed } from "../models/newsfeed";
 import { NewslistState } from "../models/news-list-state";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 const initialState: NewslistState = {
@@ -82,31 +81,26 @@ export function reducer(
   state = initialState,
   action: NewsfeedAction.Action
 ): NewslistState {
-  // console.log("Reducer call");
   switch (action.type) {
     case NewsfeedAction.NewsfeedActionTypes.LoadNewsfeedSuccess: {
-      // console.log(action.payload);
       return {
         ...state,
         newsfeed: action.payload
       };
     }
     case NewsfeedAction.NewsfeedActionTypes.SetCurrentPageSuccess: {
-      // console.log(action.payload);
       return {
         ...state,
         currentPageContent: action.payload
       };
     }
     case NewsfeedAction.NewsfeedActionTypes.UpdateNewsgridColumnCount: {
-      // console.log(action.payload);
       return {
         ...state,
         newsgridColumnCount: action.payload
       };
     }
     case NewsfeedAction.NewsfeedActionTypes.UpdateNewsgridWidth: {
-      // console.log(action.payload);
       return {
         ...state,
         newsgridWidth: action.payload

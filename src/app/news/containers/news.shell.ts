@@ -25,15 +25,12 @@ export class NewsShellComponent implements OnInit {
 
   constructor(private store: Store<NewslistState>, public dialog: MatDialog) {}
   ngOnInit() {
-    // console.log("Init news shell");
     this.store.dispatch(new NewsfeedAction.LoadNewsfeedAction());
 
     this.news$ = this.store.pipe(select(NewsfeedSelector.getNewsfeed));
     this.newsItems$ = this.store.pipe(
       select(NewsfeedSelector.getNewsfeedItems)
     );
-
-
     this.columnWidth$ = this.store.pipe(
       select(NewsfeedSelector.getNewsgridColumnWidth)
     );
@@ -41,9 +38,9 @@ export class NewsShellComponent implements OnInit {
     this.columnCount$ = this.store.pipe(
       select(NewsfeedSelector.getNewsgridColumnCount)
     );
-    this.columnCount$.subscribe(count=>{
+    this.columnCount$.subscribe(count => {
       this.newslist.changeColumnGrowth(count);
-    })
+    });
     this.newsgridWidth$ = this.store.pipe(
       select(NewsfeedSelector.getNewsgridWidth)
     );

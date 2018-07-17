@@ -13,6 +13,7 @@ export class NewsPopup implements OnInit {
     @Inject(MAT_DIALOG_DATA) data,
     private dialogRef: MatDialogRef<NewsPopup>
   ) {
+    console.log(data);
     this.pageContent = data;
   }
   close() {

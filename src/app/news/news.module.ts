@@ -10,6 +10,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { NewsfeedEffects } from "./state/news.effects";
 import { RemoveTags } from "../shared/pipes/removeTags.pipe";
 import { NewsPopup } from "./components/news-popup.component";
+import { SafePipe } from "../shared/pipes/safeHtml.pipe";
 
 export const COMPONENTS = [];
 const newsRoutes: Routes = [{ path: "", component: NewsShellComponent }];
@@ -23,7 +24,13 @@ const newsRoutes: Routes = [{ path: "", component: NewsShellComponent }];
     EffectsModule.forFeature([NewsfeedEffects]),
     StoreModule.forFeature("newsfeed", reducer)
   ],
-  declarations: [NewsListComponent, NewsShellComponent, RemoveTags, NewsPopup],
+  declarations: [
+    NewsListComponent,
+    NewsShellComponent,
+    RemoveTags,
+    NewsPopup,
+    SafePipe
+  ],
   entryComponents: [NewsPopup]
 })
 export class NewsModule {}
