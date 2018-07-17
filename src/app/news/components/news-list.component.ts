@@ -44,7 +44,7 @@ export class NewsListComponent implements OnInit {
         this.updateNewsGrid();
       }
     });
-    this.updateNewsGrid();
+    //this.updateNewsGrid();
   }
   onResize() {
     this.updateNewsGrid();
