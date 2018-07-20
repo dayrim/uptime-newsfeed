@@ -11,7 +11,14 @@ import { NewsPopup } from "../components/news-popup.component";
 import { NewsListComponent } from "../components/news-list.component";
 
 @Component({
-  templateUrl: "./news.shell.html"
+  template: `
+   <news-list 
+   [newsgridColumnWidth]="columnWidth$ | async"
+   [newsItems]="newsItems$ | async" 
+   (itemSelected)="linkSelectedItem($event)"
+   (columnCountChanged)="updateNewsgridColumnCount($event)" 
+   (widthChanged)="updateNewsgridWidth($event)">
+   </news-list>`
 })
 export class NewsShellComponent implements OnInit {
   news$: Observable<Newsfeed>;
