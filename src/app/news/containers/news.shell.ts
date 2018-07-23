@@ -9,10 +9,15 @@ import { Pagecontent } from "../models/pagecontent";
 import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material";
 import { NewsPopup } from "../components/news-popup.component";
 import { NewsListComponent } from "../components/news-list.component";
+import { style } from "@angular/animations";
 
 @Component({
   template: `
-   <news-list 
+  <mat-toolbar layout-align="center center" color="primary">
+  <h1>Newsfeed</h1>
+</mat-toolbar>
+<mat-divider>asd</mat-divider>
+  <news-list 
   
    [newsItems]="newsItems$ | async" 
    (itemSelected)="linkSelectedItem($event)"

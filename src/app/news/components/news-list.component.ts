@@ -30,5 +30,4 @@ export class NewsListComponent implements OnInit {
   }
   ngOnInit() {}
   ngAfterViewInit() {}
-  onResize() {}
 }
