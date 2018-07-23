@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NewsListComponent } from "./news/components/news-list.component";
 import { NgModule } from "@angular/core";
-import { NewsfeedAppComponent } from "./newsfeed-app";
+import { NewsfeedAppComponent } from "./app-root";
 
 export const appRoutes: Routes = [
   { path: "", redirectTo: "news", pathMatch: "full" },

@@ -13,19 +13,16 @@ import { NewsListComponent } from "../components/news-list.component";
 @Component({
   template: `
    <news-list 
-   [newsgridColumnWidth]="columnWidth$ | async"
+  
    [newsItems]="newsItems$ | async" 
    (itemSelected)="linkSelectedItem($event)"
-   (columnCountChanged)="updateNewsgridColumnCount($event)" 
-   (widthChanged)="updateNewsgridWidth($event)">
+  >
    </news-list>`
 })
 export class NewsShellComponent implements OnInit {
   news$: Observable<Newsfeed>;
   newsItems$: Observable<Newsitem[]>;
-  newsgridWidth$: Observable<Number>;
-  columnCount$: Observable<Number>;
-  columnWidth$: Observable<Number>;
+
   pageContent$: Observable<Pagecontent>;
   dialogRef: MatDialogRef<NewsPopup>;
   @ViewChild(NewsListComponent) newslist;
@@ -38,22 +35,7 @@ export class NewsShellComponent implements OnInit {
     this.newsItems$ = this.store.pipe(
       select(NewsfeedSelector.getNewsfeedItems)
     );
-    this.columnWidth$ = this.store.pipe(
-      select(NewsfeedSelector.getNewsgridColumnWidth)
-    );
 
-    this.columnCount$ = this.store.pipe(
-      select(NewsfeedSelector.getNewsgridColumnCount)
-    );
-    this.columnCount$.subscribe(count => {
-      this.newslist.changeColumnGrowth(count);
-    });
-    this.newsgridWidth$ = this.store.pipe(
-      select(NewsfeedSelector.getNewsgridWidth)
-    );
-    this.newsgridWidth$.subscribe(width => {
-      this.newslist.changeNewsgridWidth(width);
-    });
     this.pageContent$ = this.store.pipe(
       select(NewsfeedSelector.getCurrentPageContent)
     );
@@ -73,11 +55,5 @@ export class NewsShellComponent implements OnInit {
   }
   linkSelectedItem(link: string): void {
     this.store.dispatch(new NewsfeedAction.SetCurrentPageAction(link));
-  }
-  updateNewsgridWidth(width: number): void {
-    this.store.dispatch(new NewsfeedAction.UpdateNewsgridWidth(width));
-  }
-  updateNewsgridColumnCount(width: number): void {
-    this.store.dispatch(new NewsfeedAction.UpdateNewsgridColumnCount(width));
   }
 }

@@ -5,9 +5,7 @@ export enum NewsfeedActionTypes {
   LoadNewsfeed = "[NEWSFEED] LOAD_NEWSFEED",
   LoadNewsfeedSuccess = "[NEWSFEED] LOAD_NEWSFEED_SUCCESS",
   SetCurrentPage = "[PAGECONTENT] SET_CURRENT_PAGE",
-  SetCurrentPageSuccess = "[PAGECONTENT] SET_CURRENT_PAGE_SUCCESS",
-  UpdateNewsgridWidth = "[NEWSGRID] UPDATE_NEWSGRID_WIDTH",
-  UpdateNewsgridColumnCount = "[NEWSGRID] UPDATE_NEWSGRID_COLUMN_COUNT"
+  SetCurrentPageSuccess = "[PAGECONTENT] SET_CURRENT_PAGE_SUCCESS"
 }
 export class LoadNewsfeedAction {
   readonly type = NewsfeedActionTypes.LoadNewsfeed;
@@ -27,19 +25,9 @@ export class SetCurrentPageSuccessAction {
   readonly type = NewsfeedActionTypes.SetCurrentPageSuccess;
   constructor(public payload: Pagecontent) {}
 }
-export class UpdateNewsgridWidth {
-  readonly type = NewsfeedActionTypes.UpdateNewsgridWidth;
-  constructor(public payload: number) {}
-}
-export class UpdateNewsgridColumnCount {
-  readonly type = NewsfeedActionTypes.UpdateNewsgridColumnCount;
-  constructor(public payload: number) {}
-}
 
 export type Action =
   | LoadNewsfeedAction
   | LoadNewsfeedSuccessAction
   | SetCurrentPageAction
-  | SetCurrentPageSuccessAction
-  | UpdateNewsgridWidth
-  | UpdateNewsgridColumnCount;
+  | SetCurrentPageSuccessAction;

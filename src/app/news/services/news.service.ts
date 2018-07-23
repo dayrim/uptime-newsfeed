@@ -23,7 +23,7 @@ export class NewsService {
   }
 
   private handleError(err) {
-    console.error(err);
+    //console.error(err);
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {
       errorMessage = `An error occurred: ${err.error.message}`;

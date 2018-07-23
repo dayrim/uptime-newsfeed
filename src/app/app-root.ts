@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "newsfeed-app",
-  templateUrl: "./newsfeed-app.html",
-  styleUrls: ["./newsfeed-app.scss"]
+  selector: "app-root",
+  template: `<div>
+  <router-outlet></router-outlet>
+</div>`
 })
 export class NewsfeedAppComponent {
   title = "newsfeed-app";

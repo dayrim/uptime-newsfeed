@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { MaterialModule } from "./material/material.module";
-import { NewsfeedAppComponent } from "./newsfeed-app";
+import { NewsfeedAppComponent } from "./app-root";
 import { NewsListComponent } from "./news/components/news-list.component";
 import { RouterModule } from "@angular/router";
 import { appRoutes } from "./app.routes";

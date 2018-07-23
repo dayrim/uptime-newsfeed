@@ -42,10 +42,7 @@ const initialState: NewslistState = {
     direction: "",
     total_pages: 0,
     rendered_pages: 0
-  },
-  newsgridWidth: 0,
-  newsgridColumnCount: 0,
-  newsgridColumnWidth: 420
+  }
 };
 const getNewsfeedFeatureState = createFeatureSelector<NewslistState>(
   "newsfeed"
@@ -61,20 +58,6 @@ export const getNewsfeedItems = createSelector(
 export const getCurrentPageContent = createSelector(
   getNewsfeedFeatureState,
   state => state.currentPageContent
-);
-export const getNewsgridWidth = createSelector(
-  getNewsfeedFeatureState,
-  state => state.newsgridWidth
-);
-
-export const getNewsgridColumnCount = createSelector(
-  getNewsfeedFeatureState,
-  state => state.newsgridColumnCount
-);
-
-export const getNewsgridColumnWidth = createSelector(
-  getNewsfeedFeatureState,
-  state => state.newsgridColumnWidth
 );
 
 export function reducer(
@@ -94,18 +77,7 @@ export function reducer(
         currentPageContent: action.payload
       };
     }
-    case NewsfeedAction.NewsfeedActionTypes.UpdateNewsgridColumnCount: {
-      return {
-        ...state,
-        newsgridColumnCount: action.payload
-      };
-    }
-    case NewsfeedAction.NewsfeedActionTypes.UpdateNewsgridWidth: {
-      return {
-        ...state,
-        newsgridWidth: action.payload
-      };
-    }
+
     default: {
       return state;
     }
