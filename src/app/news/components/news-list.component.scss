@@ -22,16 +22,11 @@ h3 {
   display: block;
   box-shadow: 0 -10px 49px -15px rgba(187, 191, 193, 0.589);
 }
-@media only screen and (max-width: 600px) {
-  .newsfeed-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
 
 .newsfeed-wrapper {
   grid-column-gap: 15px;
   display: grid;
-  width: 70%;
+
   grid-template-columns: 1fr 1fr 1fr;
 }
 .upper-wrapper {
@@ -39,4 +34,14 @@ h3 {
   flex-direction: row; // Not really necassary though
   justify-content: center; // Or you could use "space-around"
   align-items: center;
+}
+@media only screen and (max-width: 1024px) {
+  .newsfeed-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .newsfeed-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
