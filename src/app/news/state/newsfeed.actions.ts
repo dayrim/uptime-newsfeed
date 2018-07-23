@@ -5,7 +5,9 @@ export enum NewsfeedActionTypes {
   LoadNewsfeed = "[NEWSFEED] LOAD_NEWSFEED",
   LoadNewsfeedSuccess = "[NEWSFEED] LOAD_NEWSFEED_SUCCESS",
   SetCurrentPage = "[PAGECONTENT] SET_CURRENT_PAGE",
-  SetCurrentPageSuccess = "[PAGECONTENT] SET_CURRENT_PAGE_SUCCESS"
+  SetCurrentPageSuccess = "[PAGECONTENT] SET_CURRENT_PAGE_SUCCESS",
+  SpinnerShow = "[SPINNER] SHOW",
+  SpinnerHide = "[SPINNER] HIDE"
 }
 export class LoadNewsfeedAction {
   readonly type = NewsfeedActionTypes.LoadNewsfeed;
@@ -25,9 +27,19 @@ export class SetCurrentPageSuccessAction {
   readonly type = NewsfeedActionTypes.SetCurrentPageSuccess;
   constructor(public payload: Pagecontent) {}
 }
+export class SpinnerShowAction {
+  readonly type = NewsfeedActionTypes.SpinnerShow;
+  constructor() {}
+}
+export class SpinnerHideAction {
+  readonly type = NewsfeedActionTypes.SpinnerHide;
+  constructor() {}
+}
 
 export type Action =
   | LoadNewsfeedAction
   | LoadNewsfeedSuccessAction
   | SetCurrentPageAction
-  | SetCurrentPageSuccessAction;
+  | SetCurrentPageSuccessAction
+  | SpinnerHideAction
+  | SpinnerShowAction;

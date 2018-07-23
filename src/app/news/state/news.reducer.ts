@@ -42,7 +42,8 @@ const initialState: NewslistState = {
     direction: "",
     total_pages: 0,
     rendered_pages: 0
-  }
+  },
+  spinnerShow: true
 };
 const getNewsfeedFeatureState = createFeatureSelector<NewslistState>(
   "newsfeed"
@@ -59,6 +60,10 @@ export const getCurrentPageContent = createSelector(
   getNewsfeedFeatureState,
   state => state.currentPageContent
 );
+export const isShowing = createSelector(
+  getNewsfeedFeatureState,
+  state => state.spinnerShow
+);
 
 export function reducer(
   state = initialState,
@@ -68,16 +73,21 @@ export function reducer(
     case NewsfeedAction.NewsfeedActionTypes.LoadNewsfeedSuccess: {
       return {
         ...state,
+        spinnerShow: false,
         newsfeed: action.payload
       };
     }
     case NewsfeedAction.NewsfeedActionTypes.SetCurrentPageSuccess: {
       return {
         ...state,
+        spinnerShow: false,
         currentPageContent: action.payload
       };
     }
-
+    case NewsfeedAction.NewsfeedActionTypes.SpinnerHide:
+      return { ...state, spinnerShow: false };
+    case NewsfeedAction.NewsfeedActionTypes.SpinnerShow:
+      return { ...state, spinnerShow: true };
     default: {
       return state;
     }

@@ -22,6 +22,7 @@ export class NewsfeedEffects {
         )
     )
   );
+
   @Effect()
   setCurrentPage$: Observable<NewsfeedAction.Action> = this.actions$.pipe(
     ofType(NewsfeedAction.NewsfeedActionTypes.SetCurrentPage),

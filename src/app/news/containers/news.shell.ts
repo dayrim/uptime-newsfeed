@@ -18,14 +18,16 @@ import { style } from "@angular/animations";
 </mat-toolbar>
 <mat-divider>asd</mat-divider>
   <news-list 
-  
-   [newsItems]="newsItems$ | async" 
+  [newsItems]="newsItems$ | async" 
+   [spinnerShow]="spinnerShow$ | async" 
    (itemSelected)="linkSelectedItem($event)"
+   (loadingStarted)="setLoadingStarted()"
   >
    </news-list>`
 })
 export class NewsShellComponent implements OnInit {
   news$: Observable<Newsfeed>;
+  spinnerShow$: Observable<Boolean>;
   newsItems$: Observable<Newsitem[]>;
 
   pageContent$: Observable<Pagecontent>;
@@ -35,7 +37,7 @@ export class NewsShellComponent implements OnInit {
   constructor(private store: Store<NewslistState>, public dialog: MatDialog) {}
   ngOnInit() {
     this.store.dispatch(new NewsfeedAction.LoadNewsfeedAction());
-
+    this.spinnerShow$ = this.store.pipe(select(NewsfeedSelector.isShowing));
     this.news$ = this.store.pipe(select(NewsfeedSelector.getNewsfeed));
     this.newsItems$ = this.store.pipe(
       select(NewsfeedSelector.getNewsfeedItems)
@@ -61,5 +63,8 @@ export class NewsShellComponent implements OnInit {
   }
   linkSelectedItem(link: string): void {
     this.store.dispatch(new NewsfeedAction.SetCurrentPageAction(link));
+  }
+  setLoadingStarted(): void {
+    this.store.dispatch(new NewsfeedAction.SpinnerShowAction());
   }
 }

@@ -47,10 +47,14 @@ h4 {
   grid-auto-rows: minmax(100px, auto);
 }
 
+.mat-spinner {
+  margin-top: 15px;
+}
+
 .upper-wrapper {
   display: flex;
-  flex-direction: row; // Not really necassary though
-  justify-content: center; // Or you could use "space-around"
+  // Not really necassary though
+  justify-content: space-around;
   align-items: center;
 }
 @media only screen and (max-width: 1024px) {
