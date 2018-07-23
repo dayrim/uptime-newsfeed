@@ -9,3 +9,13 @@ body {
 .basic-container {
   padding: 30px;
 }
+.newsPopup .mat-dialog-container {
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
+}
+.newsPopup {
+  height: 100vh;
+  width: 100vw !important;
+  max-width: none !important;
+}

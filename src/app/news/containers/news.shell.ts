@@ -47,6 +47,7 @@ export class NewsShellComponent implements OnInit {
     this.pageContent$.subscribe(pageContent => {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.data = pageContent;
+      dialogConfig.panelClass = "newsPopup";
       if (pageContent.total_pages != 0) {
         console.log(this.dialogRef);
         if (
