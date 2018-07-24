@@ -1,52 +1,52 @@
-import * as NewsfeedAction from "../state/newsfeed.actions";
-import { NewslistState } from "../models/news-list-state";
-import { createFeatureSelector, createSelector } from "@ngrx/store";
+import * as NewsfeedAction from '../state/newsfeed.actions';
+import { NewslistState } from '../models/news-list-state';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 const initialState: NewslistState = {
   newsfeed: {
     items: [
       {
-        title: "",
-        description: "",
-        link: "",
-        url: "",
+        title: '',
+        description: '',
+        link: '',
+        url: '',
         created: 0,
         media: {
           content: [
             {
-              url: [""],
-              medium: [""],
-              type: [""],
-              width: [""],
-              height: [""]
+              url: [''],
+              medium: [''],
+              type: [''],
+              width: [''],
+              height: ['']
             }
           ]
         }
       }
     ],
-    title: "",
-    description: "",
-    url: "",
-    image: ""
+    title: '',
+    description: '',
+    url: '',
+    image: ''
   },
   currentPageContent: {
-    title: "",
-    content: "",
-    author: "",
-    date_published: "",
-    lead_image_url: "",
-    dek: "",
-    next_page_url: "",
-    domain: "",
-    excerpt: "",
+    title: '',
+    content: '',
+    author: '',
+    date_published: '',
+    lead_image_url: '',
+    dek: '',
+    next_page_url: '',
+    domain: '',
+    excerpt: '',
     word_count: 0,
-    direction: "",
+    direction: '',
     total_pages: 0,
     rendered_pages: 0
   },
   spinnerShow: true
 };
 const getNewsfeedFeatureState = createFeatureSelector<NewslistState>(
-  "newsfeed"
+  'newsfeed'
 );
 export const getNewsfeed = createSelector(
   getNewsfeedFeatureState,

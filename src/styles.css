@@ -1,11 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 .basic-container {
-  padding: 30px;
   font-family: Roboto, Arial, sans-serif;
-  margin: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 .newsPopup .mat-dialog-container {
   overflow: hidden;
@@ -16,6 +15,7 @@
 .newsPopup {
   height: 100vh;
   min-width: 80vw;
+  z-index: -1;
 }
 @media only screen and (max-width: 1024px) {
   .newsPopup {

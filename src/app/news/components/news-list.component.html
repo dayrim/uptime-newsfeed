@@ -1,9 +1,6 @@
 <div #upperContainer (window:resize)="onResize()" class="upper-wrapper">
-
   <div #container class=" newsfeed-wrapper " [@fadeInOut] *ngIf="!spinnerShow">
-
     <mat-card #cardWrapper class="newsCard " *ngFor="let item of newsItems ">
-
       <div class="cardContent ">
         <div *ngIf="item.media ">
           <div *ngFor="let content of item.media.content ">
@@ -18,17 +15,11 @@
           <h4>{{item.title}}</h4>
           <p> {{item.description | removeTags}}</p>
         </div>
-
       </div>
-
-
       <div class="cardActions ">
         <button mat-raised-button color="primary" (click)="linkSelectedItem(item.url)">Read more</button>
-
       </div>
-
     </mat-card>
-
   </div>
   <mat-spinner [@fadeInOut] [diameter]="100" *ngIf="spinnerShow"></mat-spinner>
 </div>

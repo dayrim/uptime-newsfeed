@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatPaginatorModule,
@@ -17,7 +17,7 @@ import {
   MatDividerModule,
   MatInputModule,
   MatDialogModule
-} from "@angular/material";
+} from '@angular/material';
 
 @NgModule({
   imports: [

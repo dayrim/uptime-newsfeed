@@ -1,10 +1,11 @@
-import { Injectable } from "@angular/core";
-import { Actions, Effect, ofType } from "@ngrx/effects";
-import { NewsService } from "../services/news.service";
-import * as NewsfeedAction from "../state/newsfeed.actions";
-import { mergeMap, map, switchMap } from "rxjs/operators";
-import { Newsfeed } from "../models/newsfeed";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { NewsService } from '../services/news.service';
+import * as NewsfeedAction from '../state/newsfeed.actions';
+import { mergeMap, map, switchMap } from 'rxjs/operators';
+import { Newsfeed } from '../models/newsfeed';
+import { Observable } from 'rxjs';
+
 @Injectable()
 export class NewsfeedEffects {
   constructor(private actions$: Actions, private newsService: NewsService) {}

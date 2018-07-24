@@ -1,19 +1,18 @@
-import { Routes, RouterModule } from "@angular/router";
-import { NewsListComponent } from "./news/components/news-list.component";
-import { NgModule } from "@angular/core";
-import { NewsfeedAppComponent } from "./app-root";
+import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { NewsfeedAppComponent } from './app-root';
 
 export const appRoutes: Routes = [
-  { path: "", redirectTo: "news", pathMatch: "full" },
+  { path: '', redirectTo: 'news', pathMatch: 'full' },
   {
-    path: "",
+    path: '',
     component: NewsfeedAppComponent,
     children: [
       {
-        path: "news",
-        loadChildren: "./news/news.module#NewsModule"
+        path: 'news',
+        loadChildren: './news/news.module#NewsModule'
       },
-      { path: "", redirectTo: "news", pathMatch: "full" }
+      { path: '', redirectTo: 'news', pathMatch: 'full' }
     ]
   }
 ];

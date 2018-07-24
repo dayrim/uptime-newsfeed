@@ -1,13 +1,13 @@
-import { Newsfeed } from "../models/newsfeed";
-import { Pagecontent } from "../models/pagecontent";
+import { Newsfeed } from '../models/newsfeed';
+import { Pagecontent } from '../models/pagecontent';
 
 export enum NewsfeedActionTypes {
-  LoadNewsfeed = "[NEWSFEED] LOAD_NEWSFEED",
-  LoadNewsfeedSuccess = "[NEWSFEED] LOAD_NEWSFEED_SUCCESS",
-  SetCurrentPage = "[PAGECONTENT] SET_CURRENT_PAGE",
-  SetCurrentPageSuccess = "[PAGECONTENT] SET_CURRENT_PAGE_SUCCESS",
-  SpinnerShow = "[SPINNER] SHOW",
-  SpinnerHide = "[SPINNER] HIDE"
+  LoadNewsfeed = '[NEWSFEED] LOAD_NEWSFEED',
+  LoadNewsfeedSuccess = '[NEWSFEED] LOAD_NEWSFEED_SUCCESS',
+  SetCurrentPage = '[PAGECONTENT] SET_CURRENT_PAGE',
+  SetCurrentPageSuccess = '[PAGECONTENT] SET_CURRENT_PAGE_SUCCESS',
+  SpinnerShow = '[SPINNER] SHOW',
+  SpinnerHide = '[SPINNER] HIDE'
 }
 export class LoadNewsfeedAction {
   readonly type = NewsfeedActionTypes.LoadNewsfeed;

@@ -1,21 +1,13 @@
 <div class="dialog-content">
-
-
     <div class="close-wrapper">
         <button mat-dialog-title class="close" (click)="close()" mat-fab color="primary">
             <mat-icon>reply</mat-icon>
         </button>
-
     </div>
-    <h2>
-
-        {{pageContent.title}}</h2>
-
-
+    <h2>{{pageContent.title}}</h2>
     <h5 *ngIf="pageContent.date_published">{{pageContent.date_published | date}}</h5>
     <h5 *ngIf="pageContent.author">{{pageContent.author}}</h5>
     <div #InnerContent [innerHTML]="pageContent.content">
-
     </div>
     <h5>{{pageContent.domain}}</h5>
 </div>
