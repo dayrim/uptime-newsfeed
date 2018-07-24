@@ -18,7 +18,7 @@ h4 {
   padding-bottom: 50px;
 }
 .cardActions > button {
-  width: 125px;
+  width: 115px;
 }
 .cardActions {
   position: absolute;
@@ -55,6 +55,21 @@ h4 {
 @media only screen and (max-width: 768px) {
   .cardContent {
     display: flex;
+  }
+  .newsfeed-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .cardActions > button {
+    width: 180px;
+  }
+  .newsImage {
+    width: 150px;
+    max-height: none;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .cardContent {
+    display: initial;
   }
   .newsfeed-wrapper {
     grid-template-columns: 1fr;
