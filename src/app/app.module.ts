@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { MaterialModule } from './material/material.module';
 import { NewsfeedAppComponent } from './app-root';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
@@ -17,7 +16,6 @@ import { PageNotFoundComponent } from './news/components/not-found-component';
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    MaterialModule,
     BrowserAnimationsModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({})

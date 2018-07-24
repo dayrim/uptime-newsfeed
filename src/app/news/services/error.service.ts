@@ -1,5 +1,5 @@
 import { ErrorHandler, Injectable } from '@angular/core';
-import { UNAUTHORIZED, BAD_REQUEST, FORBIDDEN, OK } from 'http-status-codes';
+import { BAD_REQUEST, OK } from 'http-status-codes';
 
 @Injectable()
 export class GlobalErrorHandlerService implements ErrorHandler {
