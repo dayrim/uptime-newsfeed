@@ -45,7 +45,9 @@ app.route("/api/pagecontent/*").get((req, res) => {
       "x-api-key": "hK5cePoAM8AOBaKxdybQHC06rAwJAnXoRQCCBH1u"
     }
   };
+  console.log(req.params[0]);
   request(options, function(error, response, body) {
+    console.log(body);
     res.send(body);
   });
 });

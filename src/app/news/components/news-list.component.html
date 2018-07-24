@@ -1,5 +1,5 @@
 <div #upperContainer (window:resize)="onResize()" class="upper-wrapper">
-  <mat-spinner [@fadeInOut] [diameter]="100" *ngIf="spinnerShow"></mat-spinner>
+
   <div #container class=" newsfeed-wrapper " [@fadeInOut] *ngIf="!spinnerShow">
 
     <mat-card #cardWrapper class="newsCard " *ngFor="let item of newsItems ">
@@ -30,4 +30,5 @@
     </mat-card>
 
   </div>
+  <mat-spinner [@fadeInOut] [diameter]="100" *ngIf="spinnerShow"></mat-spinner>
 </div>
