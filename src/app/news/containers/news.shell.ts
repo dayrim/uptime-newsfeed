@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { NewslistState } from '../models/news-list-state';
+import { NewslistState } from '../state';
 import * as NewsfeedAction from '../state/newsfeed.actions';
-import * as NewsfeedSelector from '../state/news.reducer';
+import * as NewsfeedSelector from '../state/index';
 import { Newsfeed, Newsitem } from '../models/newsfeed';
 import { Pagecontent } from '../models/pagecontent';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
@@ -33,26 +33,19 @@ export class NewsShellComponent implements OnInit {
   @ViewChild(NewsListComponent) newslist;
 
   constructor(private store: Store<NewslistState>, public dialog: MatDialog) {}
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.dispatch(new NewsfeedAction.LoadNewsfeedAction());
     this.spinnerShow$ = this.store.pipe(select(NewsfeedSelector.isShowing));
     this.news$ = this.store.pipe(select(NewsfeedSelector.getNewsfeed));
-    this.newsItems$ = this.store.pipe(
-      select(NewsfeedSelector.getNewsfeedItems)
-    );
-    this.pageContent$ = this.store.pipe(
-      select(NewsfeedSelector.getCurrentPageContent)
-    );
+    this.newsItems$ = this.store.pipe(select(NewsfeedSelector.getNewsfeedItems));
+    this.pageContent$ = this.store.pipe(select(NewsfeedSelector.getCurrentPageContent));
     this.pageContent$.subscribe(pageContent => {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.data = pageContent;
+
       dialogConfig.panelClass = 'newsPopup';
       if (pageContent.total_pages !== 0) {
-        console.log(this.dialogRef);
-        if (
-          this.dialogRef == null ||
-          this.dialogRef.componentInstance == null
-        ) {
+        if (this.dialogRef == null || this.dialogRef.componentInstance == null) {
           this.dialogRef = this.dialog.open(NewsPopupComponent, dialogConfig);
         }
       }

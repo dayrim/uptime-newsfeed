@@ -1,4 +1,4 @@
-<div #upperContainer (window:resize)="onResize()" class="upper-wrapper">
+<div #upperContainer class="upper-wrapper">
   <div #container class=" newsfeed-wrapper " [@fadeInOut] *ngIf="!spinnerShow">
     <mat-card #cardWrapper class="newsCard " *ngFor="let item of newsItems ">
       <div class="cardContent ">

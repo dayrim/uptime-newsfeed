@@ -10,30 +10,30 @@ export enum NewsfeedActionTypes {
   SpinnerHide = '[SPINNER] HIDE'
 }
 export class LoadNewsfeedAction {
-  readonly type = NewsfeedActionTypes.LoadNewsfeed;
-  constructor() {}
+  readonly type: string = NewsfeedActionTypes.LoadNewsfeed;
+  constructor(public payload: any = null) {}
 }
 
 export class LoadNewsfeedSuccessAction {
-  readonly type = NewsfeedActionTypes.LoadNewsfeedSuccess;
+  readonly type: string = NewsfeedActionTypes.LoadNewsfeedSuccess;
   constructor(public payload: Newsfeed) {}
 }
 
 export class SetCurrentPageAction {
-  readonly type = NewsfeedActionTypes.SetCurrentPage;
+  readonly type: string = NewsfeedActionTypes.SetCurrentPage;
   constructor(public payload: string) {}
 }
 export class SetCurrentPageSuccessAction {
-  readonly type = NewsfeedActionTypes.SetCurrentPageSuccess;
+  readonly type: string = NewsfeedActionTypes.SetCurrentPageSuccess;
   constructor(public payload: Pagecontent) {}
 }
 export class SpinnerShowAction {
-  readonly type = NewsfeedActionTypes.SpinnerShow;
-  constructor() {}
+  readonly type: string = NewsfeedActionTypes.SpinnerShow;
+  constructor(public payload: any = null) {}
 }
 export class SpinnerHideAction {
-  readonly type = NewsfeedActionTypes.SpinnerHide;
-  constructor() {}
+  readonly type: string = NewsfeedActionTypes.SpinnerHide;
+  constructor(public payload: any = null) {}
 }
 
 export type Action =

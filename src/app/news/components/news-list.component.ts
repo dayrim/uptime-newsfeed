@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Newsitem } from '../models/newsfeed';
 import { Pagecontent } from '../models/pagecontent';
 import { trigger, transition, animate, style } from '@angular/animations';
@@ -17,7 +17,7 @@ import { trigger, transition, animate, style } from '@angular/animations';
     ])
   ]
 })
-export class NewsListComponent implements OnInit {
+export class NewsListComponent {
   @Input() newsItems: Newsitem[];
   @Input() spinnerShow: boolean;
   @Input() pageContent: Pagecontent;
@@ -28,9 +28,5 @@ export class NewsListComponent implements OnInit {
   linkSelectedItem(link: string): void {
     this.itemSelected.emit(link);
     this.loadingStarted.emit();
-  }
-  ngOnInit() {}
-  onResize() {
-    console.log(this.spinnerShow);
   }
 }
