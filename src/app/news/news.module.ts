@@ -24,13 +24,7 @@ const newsRoutes: Routes = [{ path: '', component: NewsShellComponent }];
     EffectsModule.forFeature([NewsfeedEffects]),
     StoreModule.forFeature('newsfeed', reducer)
   ],
-  declarations: [
-    NewsListComponent,
-    NewsShellComponent,
-    RemoveTags,
-    NewsPopupComponent,
-    SafePipe
-  ],
+  declarations: [NewsListComponent, NewsShellComponent, RemoveTags, NewsPopupComponent, SafePipe],
   entryComponents: [NewsPopupComponent]
 })
 export class NewsModule {}
