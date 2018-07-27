@@ -9,5 +9,4 @@
     <h5 *ngIf="pageContent.author">{{pageContent.author}}</h5>
     <div #InnerContent [innerHTML]="pageContent.content | safe: 'html'">
     </div>
-    <h5>{{pageContent.domain}}</h5>
-</div>
+    <h5>{
